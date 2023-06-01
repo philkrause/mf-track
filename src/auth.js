@@ -1,6 +1,7 @@
 import auth0 from 'auth0-js'
 import history from './history'
-
+const DOMAIN = 'dev-p80dfakc.auth0.com'
+const CLIENTID = 'hLZx665uKnSg6f1Gfu2j7YQ8SUCmuFKF'
 
 class Auth {
   userProfile
@@ -99,7 +100,7 @@ class Auth {
   authorizationHeader() {
     return `Bearer ${this.getIdToken()}`
   }
- }
+}
 
 const auth = new Auth()
 
