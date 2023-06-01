@@ -4,7 +4,6 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import FlightDetails from './FlightDetails'
 import redJet from '../images/redjet.png'
-import auth from '../auth'
 import ReactLoading from 'react-loading'
 import algeria from '../images/algeria.png'
 import argentina from '../images/argentina.png'
@@ -117,7 +116,7 @@ export default function MapSetHooks(props) {
   )
   const flightICAO = props.match.params.icao
 
-  const dataKey = `${flightICAO}-data`
+  //const dataKey = `${flightICAO}-data`
 
   const [viewport, setViewPort] = useState({
     longitude: 25,

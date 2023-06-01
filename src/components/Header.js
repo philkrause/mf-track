@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { faHome, faFighterJet, faPlane, faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faPlane, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
