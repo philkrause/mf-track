@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+
+body{
+background-color: rgb(255, 253, 242);
+color: rgb(0, 80, 185);
+}
+
+body #a0-lock.a0-theme-default .a0-panel *{
+ background-color:black !important; 
+}
+
+body #a0-lock.a0-theme-default .a0-panel *{
+background-color:black !important;
+}
+.about{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction:column;
+  font-family: 'Montserrat', sans-serif;
+  margin-top:2rem;
+}
+
+
+.title{
+  background-image:url('../images/banner.jpg');
+  background-position:center;
+  height: 5.5em; 
+  font-family: 'Roboto Mono', monospace;
+  color:white;
+  margin:0;
+}
+.title h2{
+  padding-top:1.5rem;
+}
+
+.header{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  border:solid 2px rgb(209, 228, 211);
+  background-color: rgb(235, 233, 233);
+
+}
+
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+
+
+.header a p{
+  margin:0;
+  padding:5px 0 0 0;
+}
+
+
+
+button :focus {
+  outline:0 !important; 
+  border:none !important;
+}
+
+
+
+
+
+a{
+text-decoration: none;
+color:rgb(0, 122, 153);
+}
+
+.legend{
+ display:flex;
+ border-bottom:solid 2px black;
+ background-color: rgb(235, 233, 233);
+justify-content:space-evenly;
+}
+
+
+.legend button{
+  width:110px;
+  color:rgb(0, 102, 128);
+  background-color: rgb(235, 233, 233);
+  font-family: 'Roboto Mono', monospace;
+  font-size:20px;
+ border-radius:5px;
+ box-shadow:0 1px 8px rgba(0,0,0,0.5);
+
+}
+.legend button:hover{
+  /* transform:scale(1.1); */
+  color:rgb(5, 147, 212);
+  background: none;
+  background-color:white;
+}
+
+.data{
+  display:flex;
+  /* border-bottom:solid 2px black; */
+  justify-content: space-evenly;
+}
+
+
+.data p{
+  width:110px;
+  font-family: 'Roboto Slab', serif;
+  font-size:15px;
+  height:3rem;
+  text-align:center;
+  border:solid 2px rgb(209, 215, 228);
+  background-color:rgb(255, 255, 255);
+  margin:0; 
+  color:rgb(0, 102, 128);
+  box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+
+.data p img{
+  margin-left:
+}
+
+
+.one-flight{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  font-size: 20px;
+  border:solid 2px rgb(209, 228, 211);
+  padding-top:1px;
+}
+
+
+
+.one-data{
+width:20rem;
+color:rgb(2, 137, 190);
+font-family: 'Lora', serif;
+padding-top:.2rem;
+font-weight:bold;
+}
+.one-data p{
+border-bottom:2px solid rgb(190, 190, 190);
+padding:1rem;
+}
+
+.mapboxgl-marker button{
+  outline:0 !important; 
+  border:none !important;
+  background:none !important;
+}
+
+.mapboxgl-popup-content{
+  border-radius:10px;
+}
+
+.mapboxgl-popup-content button{
+color:green;}
+
+.flight-marker{
+  background-color:rgb(255, 255, 255);
+}
+
+.flight-marker p{
+  padding: 0;
+  margin:0;
+}
+
+/* #fly {
+  display: block;
+  position: relative;
+  margin: 0px auto;
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #ee8a65;
+  } */
+.tool-tip {
+  display:inline-block;
+  position:relative;
+  text-align:left;
+}
+
+.tool-tip h3 {margin:12px 0;}
+
+.tool-tip .type {  
+  z-index: 3;
+  min-width:200px;
+  max-width:400px;
+  top:-20px;
+  left:50%;
+  transform:translate(-30%,-100%);
+  padding:10px 20px;
+  color:#ffffff;
+  background-color:#009cdc;
+  font-weight:normal;
+  font-size:14px;
+  border-radius:8px;
+  position:absolute;
+  z-index:99999999;
+  box-sizing:border-box;
+  box-shadow:0 1px 8px rgba(0,0,0,0.5);
+  display:none;
+}
+
+
+.tool-tip:hover .type {
+    display:block;
+}
+
+.tool-tip:hover .type {
+  display:block;
+}
+
+.tool-tip .type i {
+  z-index: 3;
+  position:absolute;
+  top:100%;
+  left:30%;
+  margin-left:-15px;
+  width:30px;
+  height:15px;
+  overflow:hidden;
+}
+
+.tool-tip .type i::after {
+  z-index: 3;
+  content:'';
+  position:absolute;
+  width:15px;
+  height:15px;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(45deg);
+  background-color:#009cdc;
+  box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+
+
+@media only screen and (max-width: 900px){
+ 
+      .data{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        padding:1rem;
+      }
+      .data p{
+        font-family: 'Montserrat', sans-serif;
+        font-size:22px;
+        width:40vw;
+        border-color:rgb(5, 147, 212) 
+
+      }
+      .title{
+        display:none;
+      }
+    }
