@@ -22,12 +22,19 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>Military Flight Tracker</title>
+  <link rel="canonical" href="https://philkrause.github.io/mf-track/" />
+
 </head>
 
 <body>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
+  <script>
+    // register ServiceWorker, remember to use absolute path!
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/mf-track/sw.js', {scope: '/mf-track/'})
+    }
+    
+    // --- Application code here ---
+    </script>
   <div id="root"></div>
   <!--
       This HTML file is a template.
