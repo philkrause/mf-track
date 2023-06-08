@@ -40,17 +40,9 @@
 
   <script>
     // Register ServiceWorker after the DOM is fully loaded
-    window.onload = function() {
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/mf-track/sw.js', { scope: '/mf-track/' })
-          .then(function(registration) {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch(function(error) {
-            console.log('Service Worker registration failed:', error);
-          });
-      }
-    };
+    if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/mf-track/registerServiceWorker.js', {scope: '/mf-track/'})
+    }
 
     // --- Application code here ---
   </script>
