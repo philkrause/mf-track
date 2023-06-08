@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/philkrause/mf-track/static/css/main.d4bdf918.css",
+    "main.js": "/philkrause/mf-track/static/js/main.e3836d59.js",
+    "static/media/banner.jpg": "/philkrause/mf-track/static/media/banner.9e3cdc5b7c22b318b6f8.jpg",
+    "static/media/australia.png": "/philkrause/mf-track/static/media/australia.9622175be9b10dd2c472.png",
+    "static/media/newzealand.png": "/philkrause/mf-track/static/media/newzealand.f090aa2f3f92c240232e.png",
+    "static/media/unitednations.png": "/philkrause/mf-track/static/media/unitednations.e24d34c8a781fd504c7c.png",
+    "static/media/unitedkingdom.png": "/philkrause/mf-track/static/media/unitedkingdom.b67ba79ae580ddfc806d.png",
+    "static/media/unitedstates.png": "/philkrause/mf-track/static/media/unitedstates.962047b3626b1f4130c2.png",
+    "index.html": "/philkrause/mf-track/index.html",
+    "main.d4bdf918.css.map": "/philkrause/mf-track/static/css/main.d4bdf918.css.map",
+    "main.e3836d59.js.map": "/philkrause/mf-track/static/js/main.e3836d59.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4bdf918.css",
+    "static/js/main.e3836d59.js"
+  ]
+}
