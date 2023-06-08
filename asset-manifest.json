@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mf-track/static/css/main.dc277ff0.css",
-    "main.js": "/mf-track/static/js/main.2631452c.js",
+    "main.js": "/mf-track/static/js/main.54fd3663.js",
     "static/media/banner.jpg": "/mf-track/static/media/banner.9e3cdc5b7c22b318b6f8.jpg",
     "static/media/australia.png": "/mf-track/static/media/australia.9622175be9b10dd2c472.png",
     "static/media/newzealand.png": "/mf-track/static/media/newzealand.f090aa2f3f92c240232e.png",
@@ -10,10 +10,10 @@
     "static/media/unitedstates.png": "/mf-track/static/media/unitedstates.962047b3626b1f4130c2.png",
     "index.html": "/mf-track/index.html",
     "main.dc277ff0.css.map": "/mf-track/static/css/main.dc277ff0.css.map",
-    "main.2631452c.js.map": "/mf-track/static/js/main.2631452c.js.map"
+    "main.54fd3663.js.map": "/mf-track/static/js/main.54fd3663.js.map"
   },
   "entrypoints": [
     "static/css/main.dc277ff0.css",
-    "static/js/main.2631452c.js"
+    "static/js/main.54fd3663.js"
   ]
 }
