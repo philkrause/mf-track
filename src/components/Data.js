@@ -154,7 +154,7 @@ export default function Data() {
 
 
     if ((new Date().getTime() - storedTime > (5 * 60 * 1000)) || !cachedData) {
-      console.log('API CALLING')
+      console.log(`API CALLING: ${process.env.ADSB_TOKEN}`)
       axiosGet()
     } else {
       console.log('API PULLING CACHE')
