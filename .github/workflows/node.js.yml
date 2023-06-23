@@ -43,11 +43,12 @@ jobs:
 
       - name: Build
         run: npm run build
+        with:
+          adsb_token: ${{ secrets.ADSB_TOKEN }}
+          mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.2
         with:
           branch: gh-pages
           folder: build
-          adsb_token: ${{ secrets.ADSB_TOKEN }}
-          mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
