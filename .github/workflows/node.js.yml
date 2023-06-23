@@ -49,5 +49,5 @@ jobs:
         with:
           branch: gh-pages
           folder: build
-          credentials: ${{ secrets.ADSB_TOKEN }}
-          credentials: ${{ secrets.MAPBOX_TOKEN }}
+          adsb_token: ${{ secrets.ADSB_TOKEN }}
+          mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
