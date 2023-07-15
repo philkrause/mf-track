@@ -125,6 +125,8 @@ export default function Data() {
 
 
   const axiosGet = () => {
+
+    console.log(`ADSB TOKEN?????? : ${process.env.ADSB_TOKEN}`)
     axios(
       {
         method: 'GET',
