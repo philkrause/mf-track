@@ -40,7 +40,7 @@ export default class App extends Component {
             }}
           />
           <Route
-            path="/"
+            path="/callback"
             render={() => {
               // auth.handleAuthentication(() => {
               //   axios.defaults.headers.common = {
