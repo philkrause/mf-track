@@ -118,15 +118,12 @@ export default function Data() {
   })
 
 
-
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
 
 
-
   const axiosGet = () => {
-
-    console.log(`ADSB TOKEN?????? : ${process.env.ADSB_TOKEN}`)
+  console.log(`ADSB TOKEN?????? : ${process.env.ADSB_TOKEN}`)
     axios(
       {
         method: 'GET',
