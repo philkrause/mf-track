@@ -45,8 +45,8 @@ jobs:
         env:
           ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
           MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
-            - name: Verify build output
-              run: ls -R build
+          - name: Verify build output
+            run: ls -R build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.2
