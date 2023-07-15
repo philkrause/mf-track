@@ -38,7 +38,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: echo "$ADSB_TOKEN"
+        run: env
         env:
           ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
           MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
