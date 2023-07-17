@@ -43,5 +43,5 @@ jobs:
           ADSB_TOKEN: 
           MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
         run: |
-          echo "ADSB_TOKEN=${{ secrets.ADSB_TOKEN }}" >> $ADSB_TOKEN"
+          echo "ADSB_TOKEN=${{ secrets.ADSB_TOKEN }}" >> $ADSB_TOKEN
           echo "MAPBOX_TOKEN: $MAPBOX_TOKEN"
