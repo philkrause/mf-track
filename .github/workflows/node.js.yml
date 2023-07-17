@@ -43,3 +43,7 @@ jobs:
         env:
           adsb_token: ${{ secrets.ADSB_TOKEN }}
           mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          github_token: ${{ secrets.workflow_token }}
+          repository: "mf-track"
