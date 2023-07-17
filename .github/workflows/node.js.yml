@@ -14,10 +14,13 @@ permissions:
 jobs:
   build_test:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [16.x]
+    env:
+      ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
+      MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+      ADSB_TOKEN_TEST: ${{ secrets.ADSB_TOKEN_TEST }}
 
     steps:
       - name: Checkout repository
@@ -38,18 +41,5 @@ jobs:
         run: npm ci
 
       - name: Build
-        env:
-          ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
-          MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
-          ADSB_TOKEN_TEST:  ${{ vars.ADSB_TOKEN_TEST }}
-        run: env | sort
-
-      
-      - name: Verify build output
-        run: ls -R build
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.2
-        with:
-          branch: gh-pages
-          folder: build
+        run: |
+          echo "ADSB_TOKEN: $ADSB_TOKEN"
