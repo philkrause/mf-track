@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  build_test:
+  build_react_app:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -45,8 +45,8 @@ jobs:
           git remote set-url origin https://${github_token}@github.com/${repository}
           npm run deploy
         env:
-          user_name: 'phil'
-          user_email: 'phil@mail.com'
+          user_name: 'philkrause'
+          user_email: 'philipkrause7@gmail.com'
           adsb_token: ${{ secrets.ADSB_TOKEN }}
           mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
           github_token: ${{ secrets.workflow_token }}
