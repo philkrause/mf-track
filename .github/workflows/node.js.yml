@@ -39,11 +39,12 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        run: npm run deploy
+        run: | 
+          npm run deploy
+          git config --global user.email "github-actions[bot]""
+          git config --global user.name "github-actions[bot]@users.noreply.github.com"
         env:
           adsb_token: ${{ secrets.ADSB_TOKEN }}
           mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
           github_token: ${{ secrets.workflow_token }}
           repository: "mf-track"
