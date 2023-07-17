@@ -9,6 +9,9 @@ on:
       - main
 permissions:
   contents: write
+env:
+  # Setting an environment variable with the value of a configuration variable
+  env_var: "Production"
 
 jobs:
   build_test:
@@ -16,10 +19,6 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-    env:
-      ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
-      MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
-      ADSB_TOKEN_TEST: ${{ secrets.ADSB_TOKEN_TEST }}
 
     steps:
       - name: Checkout repository
@@ -40,5 +39,8 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
+          MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
         run: |
-          echo "ADSB_TOKEN_TEST: $ADSB_TOKEN_TEST"
+          echo "ADSB_TOKEN: $ADSB_TOKEN"
