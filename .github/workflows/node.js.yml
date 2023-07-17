@@ -40,9 +40,9 @@ jobs:
 
       - name: Deploy
         run: | 
-          npm run deploy
           git config --global user.email "github-actions[bot]""
           git config --global user.name "github-actions[bot]@users.noreply.github.com"
+          npm run deploy
         env:
           adsb_token: ${{ secrets.ADSB_TOKEN }}
           mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
