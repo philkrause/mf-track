@@ -9,9 +9,6 @@ on:
       - main
 permissions:
   contents: write
-env:
-  # Setting an environment variable with the value of a configuration variable
-  env_var: "Production"
 
 jobs:
   build_test:
@@ -39,9 +36,10 @@ jobs:
         run: npm ci
 
       - name: Build
+        run: npm run build
+
+      - name: Deploy
+        run: npm run deploy
         env:
-          ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
-          MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
-        run: |
-          echo $ADSB_TOKEN
-          echo $MAPBOX_TOKEN
+          adsb_token: ${{ secrets.ADSB_TOKEN }}
+          mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
