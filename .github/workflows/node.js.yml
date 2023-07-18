@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+
 permissions:
   contents: write
 
@@ -42,10 +43,8 @@ jobs:
         run: | 
           git config --global user.name "philkrause"
           git config --global user.email "philipkrause7@gmail.com"
-          git remote set-url origin https://${github_token}@github.com/${repository}
+          git remote set-url origin https://github.com/philkrause/${{ github.repository }}
           npm run deploy
         env:
           adsb_token: ${{ secrets.ADSB_TOKEN }}
           mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
-          github_token: ${{ secrets.workflow_token }}
-          repository: ${{ github.repository }}
