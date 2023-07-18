@@ -216,7 +216,7 @@ export default function Data() {
                       pathname: `/flightmap/${flight.icao}`
                     }}>
                     <div className='tool-tip' >
-                    <img style={{ width: '20px', transform: `rotate(${data.track + 'deg'})` }} src={redJet} />
+                    <img style={{ width: '20px', transform: `rotate(${flight.track + 'deg'})` }} src={redJet} />
                       <div className="type">
                         <p>{flight.cou}</p>
                         <ul>
