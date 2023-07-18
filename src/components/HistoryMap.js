@@ -182,7 +182,7 @@ export default function MapSetHooks(props) {
                   setFlight(data)
                 }}
               >
-                <img style={{ width: '25px', transform: `rotate(${data.trak + 'deg'})` }} src={redJet} />
+                <img style={{ width: '25px', transform: `rotate(${data.track + 'deg'})` }} src={redJet} />
               </button>
             </Marker>
             {flight ? (

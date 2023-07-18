@@ -232,7 +232,7 @@ export default function MapSetHooks(props) {
                   setFlight(data)
                 }}
               >
-                <img style={{ width: '25px', transform: `rotate(${data.trak + 'deg'})` }} src={redJet} />
+                <img style={{ width: '25px', transform: `rotate(${data.track + 'deg'})` }} src={redJet} />
               </button>
             </Marker>
             {flight ? (
@@ -244,7 +244,7 @@ export default function MapSetHooks(props) {
                 }}
               >
                 <div className='flight-marker'>
-                  <img style={{ width: '25px', margin: '0' }} src={flags[data.cou.replace(/\s/g, '').toLowerCase()]} />
+                <img style={{ width: '25px', transform: `rotate(${data.track + 'deg'})` }} src={redJet} />
                   <p>{data.cou}</p>
                   <p>Model: {data.type}</p>
                   <p>Call: {data.call ? data.call : 'n/a'}</p>
@@ -254,7 +254,7 @@ export default function MapSetHooks(props) {
               </Popup>
             ) : null}
           </ReactMapGL>
-          <img style={{ width: '55px', margin: '0' }} src={flags[data.cou.replace(/\s/g, '').toLowerCase()]} />
+          <img style={{ width: '25px', transform: `rotate(${data.track + 'deg'})` }} src={redJet} />
           <FlightDetails
             {...data} />
         </>
