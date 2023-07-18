@@ -255,7 +255,6 @@ export default function Data() {
 
                 <Link key={index} to={{ pathname: `/flightmap/${m.icao}` }} >
                   <section className='data' key={m.id}>
-                    <p><img style={{ width: '15px' }} src={flags[m.cou.replace(/\s/g, '').toLowerCase()]} />{m.cou ? m.cou : 'n/a'}</p>
                     <p>{m.sqk ? m.sqk : 'n/a'}</p>
                     <p>{m.icao ? m.icao : 'n/a'}</p>
                     <p>{m.type ? m.type : 'n/a'}</p>
