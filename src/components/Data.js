@@ -126,9 +126,9 @@ export default function Data() {
     axios(
       {
         method: 'GET',
-        url: 'https://adsbexchange-com1.p.rapidapi.com/v2/mil/',
+        url: `https://adsbexchange-com1.p.rapidapi.com/icao/${flightICAO}/`,
         headers: {
-          'X-RapidAPI-Key': '24eb7c2fc8mshaad2c433dab62a3p1d751ajsnbee1d97f89d4',
+          'X-RapidAPI-Key': 'fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0',
           'X-RapidAPI-Host': 'adsbexchange-com1.p.rapidapi.com'
         }
       }
@@ -196,7 +196,7 @@ export default function Data() {
         <>
           <ReactMapGL
             {...viewport}
-            mapboxApiAccessToken={process.env.MAPBOX_TOKEN}
+            mapboxApiAccessToken='pk.eyJ1IjoiZGRqYW5nbyIsImEiOiJjanh1bGoxbGExNmxnM21udmxlZDE0ZXd1In0.bJagpDIel0t0x73k748YtQ'
             mapStyle='mapbox://styles/ddjango/cjy5w2fle12rc1dp6ibud3rtw'
             onViewportChange={viewport => {
               setViewPort(viewport)
