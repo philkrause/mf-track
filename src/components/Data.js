@@ -129,7 +129,7 @@ export default function Data() {
         method: 'GET',
         url: 'https://adsbexchange-com1.p.rapidapi.com/mil/',
         headers: {
-          'X-RapidAPI-Key': process.env.ADSB_TOKEN,
+          'X-RapidAPI-Key': 'fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0',
           'X-RapidAPI-Host': 'adsbexchange-com1.p.rapidapi.com'
         }
       }

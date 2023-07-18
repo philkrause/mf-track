@@ -166,7 +166,7 @@ export default function MapSetHooks(props) {
 
           <ReactMapGL
             {...viewport}
-            mapboxApiAccessToken={process.env.MAPBOX_TOKEN}
+            mapboxApiAccessToken='pk.eyJ1IjoiZGRqYW5nbyIsImEiOiJjanh1bGoxbGExNmxnM21udmxlZDE0ZXd1In0.bJagpDIel0t0x73k748YtQ'
             mapStyle='mapbox://styles/ddjango/cjy5w2fle12rc1dp6ibud3rtw'
             onViewportChange={viewport => {
               setViewPort(viewport)

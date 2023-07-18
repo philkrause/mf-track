@@ -40,9 +40,6 @@ jobs:
         run: npm run build
 
       - name: deploy to gh-pages
-        env:
-          ADSB_TOKEN: "fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0"
-          MAPBOX_TOKEN: "pk.eyJ1IjoiZGRqYW5nbyIsImEiOiJjanh1bGoxbGExNmxnM21udmxlZDE0ZXd1In0.bJagpDIel0t0x73k748YtQ"
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
