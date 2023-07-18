@@ -227,7 +227,6 @@ export default function Data() {
                         </ul>
                       </div>
                     </div>
-                    {/* transform: `rotate(${flight.trak + 'deg'})`  */}
                   </Link>
                 </Marker>
               )
