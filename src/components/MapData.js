@@ -115,7 +115,7 @@ export default function MapSetHooks(props) {
   const [data, setData] = useState(
     { lat: 0, lon: 0 }
   )
-  const flightICAO = props.match.params.flighticao
+  const flightICAO = props.match.params.hex
   const dataKey = `${flightICAO}-data`
 
   const [viewport, setViewPort] = useState({
@@ -136,7 +136,7 @@ export default function MapSetHooks(props) {
     axios(
       {
         method: 'GET',
-        url: `https://adsbexchange-com1.p.rapidapi.com/icao/${flightICAO}/`,
+        url: `https://adsbexchange-com1.p.rapidapi.com/v2/icao/${flightICAO}/`,
         headers: {
           'X-RapidAPI-Key': 'fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0',
           'X-RapidAPI-Host': 'adsbexchange-com1.p.rapidapi.com'
