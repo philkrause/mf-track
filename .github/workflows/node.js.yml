@@ -38,12 +38,14 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+         adsb_token: ${{ secrets.ADSB_TOKEN }}
+         mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
 
       - name: deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.workflow_token }}
-          adsb_token: ${{ secrets.ADSB_TOKEN }}
-          mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
+          github_token: ${{ secrets.workflow_token }}
           publish_dir: ./build 
+
 
