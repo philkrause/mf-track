@@ -222,8 +222,8 @@ export default function Data() {
                         <ul>
                           <li> Lat: {flight.lat}º</li>
                           <li> Lon: {flight.lon}º</li>
-                          <li> Alt: {flight.alt}ft.</li>
-                          <li> Spd: {flight.spd}kn.</li>
+                          <li> Alt: {flight.alt_baro}ft.</li>
+                          <li> Spd: {flight.tas}kn.</li>
                         </ul>
                       </div>
                     </div>
@@ -238,8 +238,8 @@ export default function Data() {
               <button onClick={() => intSort('squawk')}>Squawk</button>
               <button onClick={() => dataSort('hex')}>ICAO</button>
               <button onClick={() => dataSort('t')}>Type</button>
-              <button onClick={() => intSort('alt')}>Alt</button>
-              <button onClick={() => intSort('spd')}>Spd</button>
+              <button onClick={() => intSort('alt_baro')}>Alt</button>
+              <button onClick={() => intSort('tas')}>Spd</button>
               <button onClick={() => intSort('postime')}>LastRep</button>
               <button onClick={() => dataSort('call')}>Call</button>
               <button onClick={() => intSort('lat')}>Lat</button>
@@ -255,10 +255,10 @@ export default function Data() {
                   <section className='data' key={m.id}>
                     <p>{m.squawk ? m.squawk : 'n/a'}</p>
                     <p>{m.hex ? m.hex : 'n/a'}</p>
-                    <p>{m.type ? m.type : 'n/a'}</p>
-                    <p>{m.alt ? m.alt + 'ft.' : 'n/a'}</p>
+                    <p>{m.t ? m.t : 'n/a'}</p>
+                    <p>{m.alt_baro ? m.alt_baro + 'ft.' : 'n/a'}</p>
                     <p>{m.tas ? m.tas + 'kn.' : 'n/a'}</p>
-                    <p><Moment format='LTS'>{new Date(parseInt(m.postime))}</Moment></p>
+                    <p><Moment format='LTS'>{new Date(parseInt(m.now))}</Moment></p>
                     <p>{m.flight ? m.flight : 'n/a'}</p>
                     <p>{Number(m.lat).toFixed(5)}</p>
                     <p>{Number(m.lon).toFixed(5)}</p>
