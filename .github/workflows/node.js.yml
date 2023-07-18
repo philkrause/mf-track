@@ -17,9 +17,6 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-    env:
-      ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
-      MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -41,6 +38,9 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          ADSB_TOKEN: "fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0"
+          MAPBOX_TOKEN: "pk.eyJ1IjoiZGRqYW5nbyIsImEiOiJjanh1bGoxbGExNmxnM21udmxlZDE0ZXd1In0.bJagpDIel0t0x73k748YtQ"
 
       - name: deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
