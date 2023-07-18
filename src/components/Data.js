@@ -235,10 +235,9 @@ export default function Data() {
           </ReactMapGL>
           <div>
             <section className='legend'>
-              <button onClick={() => dataSort('cou')}>Military</button>
-              <button onClick={() => intSort('sqk')}>Squawk</button>
-              <button onClick={() => dataSort('icao')}>ICAO</button>
-              <button onClick={() => dataSort('icao')}>Type</button>
+              <button onClick={() => intSort('squawk')}>Squawk</button>
+              <button onClick={() => dataSort('hex')}>ICAO</button>
+              <button onClick={() => dataSort('t')}>Type</button>
               <button onClick={() => intSort('alt')}>Alt</button>
               <button onClick={() => intSort('spd')}>Spd</button>
               <button onClick={() => intSort('postime')}>LastRep</button>
@@ -252,15 +251,15 @@ export default function Data() {
 
               return (
 
-                <Link key={index} to={{ pathname: `/flightmap/${m.icao}` }} >
+                <Link key={index} to={{ pathname: `/flightmap/${m.hex}` }} >
                   <section className='data' key={m.id}>
-                    <p>{m.sqk ? m.sqk : 'n/a'}</p>
-                    <p>{m.icao ? m.icao : 'n/a'}</p>
+                    <p>{m.squawk ? m.squawk : 'n/a'}</p>
+                    <p>{m.hex ? m.hex : 'n/a'}</p>
                     <p>{m.type ? m.type : 'n/a'}</p>
                     <p>{m.alt ? m.alt + 'ft.' : 'n/a'}</p>
-                    <p>{m.spd ? m.spd + 'kn.' : 'n/a'}</p>
+                    <p>{m.tas ? m.tas + 'kn.' : 'n/a'}</p>
                     <p><Moment format='LTS'>{new Date(parseInt(m.postime))}</Moment></p>
-                    <p>{m.call ? m.call : 'n/a'}</p>
+                    <p>{m.flight ? m.flight : 'n/a'}</p>
                     <p>{Number(m.lat).toFixed(5)}</p>
                     <p>{Number(m.lon).toFixed(5)}</p>
                     <p>{m.gnd > 0 ? 'True' : 'False'}</p>
