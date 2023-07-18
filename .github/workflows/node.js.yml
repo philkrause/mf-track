@@ -43,7 +43,7 @@ jobs:
         run: | 
           git config --global user.name "philkrause"
           git config --global user.email "philipkrause7@gmail.com"
-          git remote set-url origin https://github.com/philkrause/${{ github.repository }}
+          git remote set-url origin https://github.com/${{ github.repository }}
           npm run deploy
         env:
           adsb_token: ${{ secrets.ADSB_TOKEN }}
