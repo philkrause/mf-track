@@ -39,12 +39,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        run: | 
-          git config --global user.name "philkrause"
-          git config --global user.email "philipkrause7@gmail.com"
-          git remote set-url origin https://github.com/${{ github.repository }}
-          npm run deploy
-        env:
+      - name: deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.workflow_token }}
           adsb_token: ${{ secrets.ADSB_TOKEN }}
           mapbox_token: ${{ secrets.MAPBOX_TOKEN }}
+          publish_dir: ./build 
+
