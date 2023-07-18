@@ -17,9 +17,9 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-  env:
-    ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
-    MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+    env:
+      ADSB_TOKEN: ${{ secrets.ADSB_TOKEN }}
+      MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
 
     steps:
       - name: Checkout repository
