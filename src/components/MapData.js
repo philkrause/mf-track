@@ -136,9 +136,9 @@ export default function MapSetHooks(props) {
     axios(
       {
         method: 'GET',
-        url: 'https://adsbexchange-com1.p.rapidapi.com/v2/mil/',
+        url: `https://adsbexchange-com1.p.rapidapi.com/icao/${flightICAO}/`,
         headers: {
-          'X-RapidAPI-Key': '24eb7c2fc8mshaad2c433dab62a3p1d751ajsnbee1d97f89d4',
+          'X-RapidAPI-Key': 'fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0',
           'X-RapidAPI-Host': 'adsbexchange-com1.p.rapidapi.com'
         }
       }
