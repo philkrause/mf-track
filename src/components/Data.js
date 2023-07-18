@@ -51,6 +51,7 @@ import unitedkingdom from '../images/unitedkingdom.png'
 import nato from '../images/unitednations.png'
 import unitedstates from '../images/unitedstates.png'
 import qatar from '../images/qatar.png'
+import redJet from '../images/redjet.png'
 
 
 
@@ -123,12 +124,13 @@ export default function Data() {
 
 
   const axiosGet = () => {
+    console.log("Calling the v2 mil endpoint")
     axios(
       {
         method: 'GET',
         url: 'https://adsbexchange-com1.p.rapidapi.com/v2/mil/',
         headers: {
-          'X-RapidAPI-Key': '24eb7c2fc8mshaad2c433dab62a3p1d751ajsnbee1d97f89d4',
+          'X-RapidAPI-Key': 'fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0',
           'X-RapidAPI-Host': 'adsbexchange-com1.p.rapidapi.com'
         }
       }
@@ -152,7 +154,6 @@ export default function Data() {
 
 
     if ((new Date().getTime() - storedTime > (5 * 60 * 1000)) || !cachedData) {
-      console.log(`API CALLING: ${process.env.ADSB_TOKEN}`)
       axiosGet()
     } else {
       console.log('API PULLING CACHE')
@@ -177,7 +178,6 @@ export default function Data() {
 
   const intSort = (type) => {
     const sorted = [].concat(data).sort((a, b) => b[type] - a[type])
-    console.log({ sorted })
     return setData(sorted)
   }
   const render = () => {
@@ -216,7 +216,7 @@ export default function Data() {
                       pathname: `/flightmap/${flight.icao}`
                     }}>
                     <div className='tool-tip' >
-                      <img style={{ width: '20px' }} src={flags[flight.cou.replace(/\s/g, '').toLowerCase()]} />
+                      <img style={{ width: '20px' }} src={redJet} />
                       <div className="type">
                         <p>{flight.cou}</p>
                         <ul>

@@ -132,7 +132,7 @@ export default function MapSetHooks(props) {
   //const fpost = (data) => axios.post('flightinfo/addflight', data)
 
   const axiosGet = () => {
-    console.log("running get")
+    console.log("Calling the FLIGHTICAO Endpoint")
     axios(
       {
         method: 'GET',
