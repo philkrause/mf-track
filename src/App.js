@@ -30,14 +30,6 @@ export default class App extends Component {
 
         <Header />
         <Switch>
-          <Route path="/login" render={() => auth.login()} />
-          <Route
-            path="/logout"
-            render={() => {
-              auth.logout()
-              return <p />
-            }}
-          />
           <Route
             path="/callback"
             render={() => {
