@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Info from './components/Info'
 import Data from './components/Data'
-import MapData from './components/MapData'
+import SingleFlight from './components/SingleFlight'
 import Header from './components/Header'
 import History from './components/History'
 import HistoryMap from './components/HistoryMap'
@@ -42,7 +42,7 @@ export default class App extends Component {
             }}
           />
           <Route path='/' exact component={Data} />
-          <Route path='/flightmap/:flighticao' exact component={MapData} />
+          <Route path='/flightmap/:flighticao' exact component={SingleFlight} />
           <Route path='/userflighthistory' exact component={History} />
           <Route path='/info' exact component={Info} />
           <Route path='/about' exact component={About} />
