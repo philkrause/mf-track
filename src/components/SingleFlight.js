@@ -1,107 +1,3 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import ReactMapGL, { Marker, Popup } from 'react-map-gl'
-import 'mapbox-gl/dist/mapbox-gl.css'
-import FlightDetails from './FlightDetails'
-import redJet from '../images/redjet.png'
-import auth from '../auth'
-import ReactLoading from 'react-loading'
-import algeria from '../images/algeria.png'
-import australia from '../images/australia.png'
-import austria from '../images/austria.png'
-import argentina from '../images/argentina.png'
-import azerbaijan from '../images/azerbaijan.png'
-import bahrain from '../images/bahrain.png'
-import belgium from '../images/belgium.png'
-import bolivia from '../images/bolivia.png'
-import brazil from '../images/brazil.png'
-import canada from '../images/canada.png'
-import chile from '../images/chile.png'
-import czechrepublic from '../images/czechrepublic.png'
-import denmark from '../images/denmark.png'
-import ecuador from '../images/ecuador.png'
-import egypt from '../images/egypt.png'
-import finland from '../images/finland.png'
-import france from '../images/france.png'
-import germany from '../images/germany.png'
-import greece from '../images/greece.png'
-import hungary from '../images/hungary.png'
-import india from '../images/india.png'
-import ireland from '../images/ireland.png'
-import italy from '../images/italy.png'
-import israel from '../images/israel.png'
-import japan from '../images/japan.png'
-import kuwait from '../images/kuwait.png'
-import malaysia from '../images/malaysia.png'
-import mexico from '../images/mexico.png'
-import netherlands from '../images/netherlands.png'
-import newzealand from '../images/newzealand.png'
-import nigeria from '../images/nigeria.png'
-import oman from '../images/oman.png'
-import poland from '../images/poland.png'
-import portugal from '../images/portugal.png'
-import saudiarabia from '../images/saudiarabia.png'
-import slovakia from '../images/slovakia.png'
-import slovenia from '../images/slovenia.png'
-import spain from '../images/spain.png'
-import sweden from '../images/sweden.png'
-import switzerland from '../images/switzerland.png'
-import taiwan from '../images/taiwan.png'
-import turkey from '../images/turkey.png'
-import unitedkingdom from '../images/unitedkingdom.png'
-import nato from '../images/unitednations.png'
-import unitedstates from '../images/unitedstates.png'
-import qatar from '../images/qatar.png'
-
-const flags = {
-  algeria,
-  argentina,
-  australia,
-  austria,
-  azerbaijan,
-  bahrain,
-  belgium,
-  bolivia,
-  brazil,
-  canada,
-  chile,
-  czechrepublic,
-  denmark,
-  ecuador,
-  egypt,
-  finland,
-  france,
-  germany,
-  greece,
-  hungary,
-  india,
-  ireland,
-  israel,
-  italy,
-  japan,
-  kuwait,
-  malaysia,
-  mexico,
-  nato,
-  netherlands,
-  newzealand,
-  nigeria,
-  oman,
-  poland,
-  portugal,
-  saudiarabia,
-  slovenia,
-  slovakia,
-  spain,
-  sweden,
-  switzerland,
-  taiwan,
-  turkey,
-  unitedkingdom,
-  unitedstates,
-  qatar
-}
-
 export default function MapSetHooks(props) {
 
   // if (!auth.isAuthenticated()) {
@@ -115,7 +11,7 @@ export default function MapSetHooks(props) {
   const [data, setData] = useState(
     { lat: 0, lon: 0 }
   )
-  const flightICAO = props.match.params
+  const flightICAO = props
   console.log(JSON.stringify(flightICAO))
   const dataKey = `${flightICAO}-data`
 
@@ -249,7 +145,7 @@ export default function MapSetHooks(props) {
                   <p>{data.cou}</p>
                   <p>Model: {data.type}</p>
                   <p>Call: {data.call ? data.call : 'n/a'}</p>
-                  <p>Speed: {data.spd ? data.spd + 'kn' : 'n/a'}</p>
+                  <p>Speed: {data.tas ? data.tas + 'kn' : 'n/a'}</p>
                   <p>Altitude: {data.alt ? data.alt + 'ft' : 'n/a'}</p>
                 </div>
               </Popup>

@@ -123,14 +123,16 @@ export default function Data() {
   const [loading, setLoading] = useState(true)
 
 
+
   const axiosGet = () => {
     console.log("Calling the v2 mil endpoint")
+    
     axios(
       {
         method: 'GET',
         url: 'https://adsbexchange-com1.p.rapidapi.com/v2/mil/',
         headers: {
-          'X-RapidAPI-Key': 'fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0',
+          'X-RapidAPI-Key': process.env.ASDB_TOKEN,
           'X-RapidAPI-Host': 'adsbexchange-com1.p.rapidapi.com'
         }
       }
@@ -239,8 +241,8 @@ export default function Data() {
               <button onClick={() => dataSort('hex')}>ICAO</button>
               <button onClick={() => dataSort('t')}>Type</button>
               <button onClick={() => intSort('alt_baro')}>Alt</button>
-              <button onClick={() => intSort('spd')}>Spd</button>
-              <button onClick={() => intSort('postime')}>LastRep</button>
+              <button onClick={() => intSort('tas')}>Spd</button>
+              <button onClick={() => intSort('seen')}>LastRep</button>
               <button onClick={() => dataSort('call')}>Call</button>
               <button onClick={() => intSort('lat')}>Lat</button>
               <button onClick={() => intSort('lon')}>Long</button>
