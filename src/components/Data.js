@@ -4,6 +4,7 @@ import axios from 'axios'
 import Moment from 'react-moment'
 import '../css/data.css'
 import ReactMapGL, { Marker } from 'react-map-gl'
+import redJet from '../images/redjet.png'
 import ReactLoading from 'react-loading'
 import SingleFlight from './SingleFlight'
 
