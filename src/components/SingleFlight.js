@@ -116,7 +116,7 @@ export default function MapSetHooks(props) {
     { lat: 0, lon: 0 }
   )
   const flightICAO = props.match.params
-  console.log(`DataKey: ${json.stringify(flightICAO)}`)
+  console.log(`DataKey: ${JSON.stringify(flightICAO)}`)
   const dataKey = `${flightICAO}-data`
 
   const [viewport, setViewPort] = useState({
