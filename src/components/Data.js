@@ -239,7 +239,7 @@ export default function Data() {
               <button onClick={() => dataSort('hex')}>ICAO</button>
               <button onClick={() => dataSort('t')}>Type</button>
               <button onClick={() => intSort('alt_baro')}>Alt</button>
-              <button onClick={() => intSort('tas')}>Spd</button>
+              <button onClick={() => intSort('spd')}>Spd</button>
               <button onClick={() => intSort('postime')}>LastRep</button>
               <button onClick={() => dataSort('call')}>Call</button>
               <button onClick={() => intSort('lat')}>Lat</button>
