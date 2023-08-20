@@ -1,3 +1,12 @@
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import ReactMapGL, { Marker, Popup } from 'react-map-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
+import FlightDetails from './FlightDetails'
+import redJet from '../images/redjet.png'
+import ReactLoading from 'react-loading'
+
+
 export default function MapSetHooks(props) {
 
   // if (!auth.isAuthenticated()) {
@@ -6,12 +15,12 @@ export default function MapSetHooks(props) {
 
   const [loading, setLoading] = useState(true)
   const [flight, setFlight] = useState('')
-
+  
 
   const [data, setData] = useState(
     { lat: 0, lon: 0 }
   )
-  const flightICAO = props
+  const flightICAO = props.singleFlightIcao
   console.log(JSON.stringify(flightICAO))
   const dataKey = `${flightICAO}-data`
 
@@ -33,9 +42,9 @@ export default function MapSetHooks(props) {
     axios(
       {
         method: 'GET',
-        url: `https://adsbexchange-com1.p.rapidapi.com/v2/icao/${flightICAO}/`,
+        url: `https://adsbexchange-com1.p.rapidapi.com/v2/icao/${props.singleFlightIcao}/`,
         headers: {
-          'X-RapidAPI-Key': 'fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0',
+          'X-RapidAPI-Key': process.env.ADSB_TOKEN,
           'X-RapidAPI-Host': 'adsbexchange-com1.p.rapidapi.com'
         }
       }
@@ -113,7 +122,7 @@ export default function MapSetHooks(props) {
 
           <ReactMapGL
             {...viewport}
-            mapboxApiAccessToken={'pk.eyJ1IjoiZGRqYW5nbyIsImEiOiJjanh1bGoxbGExNmxnM21udmxlZDE0ZXd1In0.bJagpDIel0t0x73k748YtQ'}
+            mapboxApiAccessToken={process.env.MAPBOX_TOKEN}
             mapStyle='mapbox://styles/ddjango/cjy5w2fle12rc1dp6ibud3rtw'
             onViewportChange={viewport => {
               setViewPort(viewport)

@@ -5,105 +5,7 @@ import Moment from 'react-moment'
 import '../css/data.css'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import ReactLoading from 'react-loading'
-import algeria from '../images/algeria.png'
-import argentina from '../images/argentina.png'
-import australia from '../images/australia.png'
-import austria from '../images/austria.png'
-import azerbaijan from '../images/azerbaijan.png'
-import bahrain from '../images/bahrain.png'
-import belgium from '../images/belgium.png'
-import bolivia from '../images/bolivia.png'
-import brazil from '../images/brazil.png'
-import canada from '../images/canada.png'
-import chile from '../images/chile.png'
-import czechrepublic from '../images/czechrepublic.png'
-import denmark from '../images/denmark.png'
-import ecuador from '../images/ecuador.png'
-import egypt from '../images/egypt.png'
-import finland from '../images/finland.png'
-import france from '../images/france.png'
-import germany from '../images/germany.png'
-import greece from '../images/greece.png'
-import hungary from '../images/hungary.png'
-import india from '../images/india.png'
-import ireland from '../images/ireland.png'
-import italy from '../images/italy.png'
-import israel from '../images/israel.png'
-import kuwait from '../images/kuwait.png'
-import poland from '../images/poland.png'
-import portugal from '../images/portugal.png'
-import japan from '../images/japan.png'
-import malaysia from '../images/malaysia.png'
-import mexico from '../images/mexico.png'
-import netherlands from '../images/netherlands.png'
-import newzealand from '../images/newzealand.png'
-import nigeria from '../images/nigeria.png'
-import oman from '../images/oman.png'
-import saudiarabia from '../images/saudiarabia.png'
-import slovakia from '../images/slovakia.png'
-import slovenia from '../images/slovenia.png'
-import spain from '../images/spain.png'
-import sweden from '../images/sweden.png'
-import switzerland from '../images/switzerland.png'
-import taiwan from '../images/taiwan.png'
-import turkey from '../images/turkey.png'
-import unitedkingdom from '../images/unitedkingdom.png'
-import nato from '../images/unitednations.png'
-import unitedstates from '../images/unitedstates.png'
-import qatar from '../images/qatar.png'
-import redJet from '../images/redjet.png'
-
-
-
-const flags = {
-  algeria,
-  australia,
-  austria,
-  argentina,
-  azerbaijan,
-  bahrain,
-  belgium,
-  bolivia,
-  brazil,
-  canada,
-  chile,
-  czechrepublic,
-  denmark,
-  ecuador,
-  egypt,
-  finland,
-  france,
-  germany,
-  greece,
-  hungary,
-  india,
-  ireland,
-  israel,
-  italy,
-  japan,
-  kuwait,
-  malaysia,
-  mexico,
-  nato,
-  netherlands,
-  newzealand,
-  nigeria,
-  oman,
-  poland,
-  portugal,
-  saudiarabia,
-  slovakia,
-  slovenia,
-  spain,
-  sweden,
-  switzerland,
-  taiwan,
-  turkey,
-  unitedkingdom,
-  unitedstates,
-  qatar
-}
-
+import SingleFlight from './SingleFlight'
 
 export default function Data() {
 
@@ -146,8 +48,6 @@ export default function Data() {
       setLoading(false)
     })
   }
-
-
 
 
   useEffect(() => {
@@ -194,45 +94,48 @@ export default function Data() {
 
     } else {
 
-      return (
-        <>
-          <ReactMapGL
-            {...viewport}
-            mapboxApiAccessToken='pk.eyJ1IjoiZGRqYW5nbyIsImEiOiJjanh1bGoxbGExNmxnM21udmxlZDE0ZXd1In0.bJagpDIel0t0x73k748YtQ'
-            mapStyle='mapbox://styles/ddjango/cjy5w2fle12rc1dp6ibud3rtw'
-            onViewportChange={viewport => {
-              setViewPort(viewport)
-            }}
-            width='100vw'
-            height='440px'
-          >
-            {data.map((flight, index) => {
-              return (
-                <Marker
-                  key={index}
-                  latitude={parseFloat(flight.lat)}
-                  longitude={parseFloat(flight.lon)}
-                >
-                  <Link
-                    to={{
-                      pathname: `/flightmap/${flight.icao}`
-                    }}>
-                    <div className='tool-tip' >
-                    <img style={{ width: '20px', transform: `rotate(${flight.track + 'deg'})` }} src={redJet} />
-                      <div className="type">
-                        <p>{flight.cou}</p>
-                        <ul>
-                          <li> Lat: {flight.lat}º</li>
-                          <li> Lon: {flight.lon}º</li>
-                          <li> Alt: {flight.alt_baro}ft.</li>
-                          <li> Spd: {flight.tas}kn.</li>
-                        </ul>
+        return (
+          <>
+            <ReactMapGL
+              {...viewport}
+              mapboxApiAccessToken={process.env.MAPBOX_TOKEN}
+              mapStyle='mapbox://styles/ddjango/cjy5w2fle12rc1dp6ibud3rtw'
+              onViewportChange={viewport => {
+                setViewPort(viewport)
+              }}
+              width='100vw'
+              height='440px'
+            >
+              {data.map((flight, index) => {
+                  const flightHEX = flight.hex
+                return (
+                  <Marker
+                    key={index}
+                    latitude={parseFloat(flight.lat)}
+                    longitude={parseFloat(flight.lon)}
+                  >
+                  <SingleFlight singleFlightIcao={flightHEX}/>
+
+                    <Link
+                      to={{
+                        pathname: `/flightmap/${flight.icao}`
+                      }}>
+                      <div className='tool-tip' >
+                      <img style={{ width: '20px', transform: `rotate(${flight.track + 'deg'})` }} src={redJet} />
+                        <div className="type">
+                          <p>{flight.cou}</p>
+                          <ul>
+                            <li> Lat: {flight.lat}º</li>
+                            <li> Lon: {flight.lon}º</li>
+                            <li> Alt: {flight.alt_baro}ft.</li>
+                            <li> Spd: {flight.tas}kn.</li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </Marker>
-              )
-            })}
+                    </Link>
+                  </Marker>
+                )
+              })}
 
           </ReactMapGL>
           <div>
@@ -247,10 +150,8 @@ export default function Data() {
               <button onClick={() => intSort('lat')}>Lat</button>
               <button onClick={() => intSort('lon')}>Long</button>
               <button onClick={() => dataSort('gnd')}>Grounded</button>
-
             </section>
             {data.map((m, index) => {
-
               return (
 
                 <Link key={index} to={{ pathname: `/flightmap/${m.hex}` }} >
